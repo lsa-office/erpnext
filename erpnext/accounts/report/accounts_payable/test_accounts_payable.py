@@ -7,7 +7,7 @@ from erpnext.accounts.report.accounts_payable.accounts_payable import execute
 from erpnext.accounts.test.accounts_mixin import AccountsTestMixin
 
 
-class TestAccountsReceivable(AccountsTestMixin, FrappeTestCase):
+class TestAccountsPayable(AccountsTestMixin, FrappeTestCase):
 	def setUp(self):
 		self.create_company()
 		self.create_customer()
@@ -30,10 +30,7 @@ class TestAccountsReceivable(AccountsTestMixin, FrappeTestCase):
 			"party_type": "Supplier",
 			"party": [self.supplier],
 			"report_date": today(),
-			"range1": 30,
-			"range2": 60,
-			"range3": 90,
-			"range4": 120,
+			"range": "30, 60, 90, 120",
 			"in_party_currency": 1,
 		}
 
